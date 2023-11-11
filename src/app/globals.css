@@ -46,3 +46,11 @@ body {
 .note-card-date {
   @apply text-xs text-gray-500;
 }
+
+.note-labels {
+  @apply flex flex-row;
+}
+
+.label {
+  @apply w-fit bg-cool-yellow px-3 py-0.5 mr-3 text-center text-sm font-bold rounded-sm;
+}
