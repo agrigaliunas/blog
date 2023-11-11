@@ -42,3 +42,7 @@ body {
 .note-card-content {
   @apply text-white;
 }
+
+.note-card-date {
+  @apply text-xs text-gray-500;
+}
