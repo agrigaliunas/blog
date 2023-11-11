@@ -11,6 +11,16 @@ body {
   @apply bg-deep-dark-purple;
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
 .main {
   @apply flex flex-col items-center justify-between p-8;
 }
@@ -32,7 +42,7 @@ body {
 }
 
 .note-card {
-  @apply flex flex-col w-[85vw] px-5 bg-dark-purple rounded-xl shadow-xl h-[50vh];
+  @apply flex flex-col w-[85vw] px-5 bg-dark-purple rounded-xl drop-shadow-lg h-[50vh] overflow-hidden;
 }
 
 .note-card-title {
@@ -40,7 +50,7 @@ body {
 }
 
 .note-card-content {
-  @apply text-white;
+  @apply text-white break-all;
 }
 
 .note-card-date {
@@ -48,9 +58,9 @@ body {
 }
 
 .note-labels {
-  @apply flex flex-row;
+  @apply flex flex-row text-left;
 }
 
 .label {
-  @apply w-fit bg-cool-yellow px-3 py-0.5 mr-3 text-center text-sm font-bold rounded-sm;
+  @apply w-fit select-none bg-cool-yellow px-3 py-0.5 mr-3 text-center text-sm font-bold rounded-sm;
 }

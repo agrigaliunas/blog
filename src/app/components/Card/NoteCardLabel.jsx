@@ -3,7 +3,7 @@ import React from 'react'
 const NoteCardLabel = ({noteLabel}) => {
   return (
     <div className='label'>
-        #{noteLabel.toUpperCase()}
+        <span>#{noteLabel.toUpperCase()}</span>
     </div>
   )
 }
