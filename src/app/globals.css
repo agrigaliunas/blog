@@ -6,3 +6,19 @@
 *{
   font-family: 'Manrope', sans-serif;
 }
+
+.header {
+  @apply flex flex-row justify-around bg-black w-full text-white p-5 items-center;
+}
+
+.logo {
+  @apply font-bold text-xl;
+}
+
+.burger-menu-line {
+  @apply block w-8 h-0.5 bg-[#ffd04d];
+}
+
+.burger-menu-button {
+  @apply space-y-2;
+}
