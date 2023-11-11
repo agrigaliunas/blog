@@ -1,6 +1,7 @@
 import {connectDB} from '@/app/utils/db'
 import Note from '@/app/models/Note'
 import Header from './components/Header/Header';
+import NoteCard from './components/Card/NoteCard';
 
 const loadNotes = async () => {
   connectDB();
@@ -15,11 +16,10 @@ export default async function Home() {
   return (
     <>
       <Header />
-      <main className="flex flex-col items-center justify-between">
-        {notes.map(note => (
-          <div key={note._id}>
-            <span>{note.title}</span>
-            <span>{note.content}</span>
+      <main className="main">
+        {notes.map(n => (
+          <div key={n._id}>
+            <NoteCard note={n} />
           </div>
         ))}
       </main>

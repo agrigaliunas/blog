@@ -7,6 +7,14 @@
   font-family: 'Manrope', sans-serif;
 }
 
+body {
+  @apply bg-deep-dark-purple;
+}
+
+.main {
+  @apply flex flex-col items-center justify-between p-8;
+}
+
 .header {
   @apply flex flex-row justify-around bg-black w-full text-white p-5 items-center;
 }
@@ -16,9 +24,21 @@
 }
 
 .burger-menu-line {
-  @apply block w-8 h-0.5 bg-[#ffd04d];
+  @apply block w-8 h-0.5 bg-cool-yellow;
 }
 
 .burger-menu-button {
-  @apply space-y-2;
+  @apply space-y-2 flex flex-col justify-center items-center;
+}
+
+.note-card {
+  @apply flex flex-col w-[85vw] px-5 bg-dark-purple rounded-xl shadow-xl h-[50vh];
+}
+
+.note-card-title {
+  @apply font-bold text-2xl text-white;
+}
+
+.note-card-content {
+  @apply text-white;
 }
