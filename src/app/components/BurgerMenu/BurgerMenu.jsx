@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function BurgerMenu() {
+export default function BurgerMenu({onOpenMenu}) {
   return (
-    <button className="burger-menu-button">
+    <button onClick={onOpenMenu} className="burger-menu-button">
         <span className="burger-menu-line"></span>
         <span className="burger-menu-line"></span>
         <span className="burger-menu-line"></span>

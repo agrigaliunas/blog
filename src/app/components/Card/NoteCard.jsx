@@ -18,7 +18,7 @@ const NoteCard = ({note}) => {
           <Divider />
           <div className='my-3 note-labels overflow-x-scroll scrollbar-hide'>
             {note.labels.map(label => (
-              <NoteCardLabel noteLabel={label}/>
+              <NoteCardLabel key={note._id} noteLabel={label}/>
             ))}
           </div>
           <div className='my-3'>

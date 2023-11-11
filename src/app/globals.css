@@ -7,8 +7,9 @@
   font-family: 'Manrope', sans-serif;
 }
 
+
 body {
-  @apply bg-deep-dark-purple;
+  @apply bg-deep-dark-purple h-screen;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -22,7 +23,7 @@ body {
 
 
 .main {
-  @apply flex flex-col items-center justify-between p-8;
+  @apply flex flex-col items-center justify-between p-8 h-full;
 }
 
 .header {
@@ -63,4 +64,20 @@ body {
 
 .label {
   @apply w-fit select-none bg-cool-yellow px-3 py-0.5 mr-3 text-center text-sm font-bold rounded-sm;
+}
+
+.read-note-button {
+  @apply bg-[#d64040] font-bold p-2 my-1 rounded-md;
+}
+
+.header-right {
+  @apply flex flex-row items-center
+}
+
+.create-note-button {
+  @apply bg-white mx-3 text-black font-bold p-1 my-1 rounded-md
+}
+
+.sub-header {
+  @apply flex items-center justify-center flex-row py-5 w-full bg-purple-950;
 }
