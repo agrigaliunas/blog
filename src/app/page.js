@@ -1,6 +1,7 @@
 import {connectDB} from '@/app/utils/db'
 import Note from '@/app/models/Note'
 import NoteCard from './components/Card/NoteCard';
+import NoNotesFoundMessage from './components/Message/NoNotesFoundMessage';
 
 const loadNotes = async () => {
   connectDB();
@@ -14,6 +15,8 @@ export default async function Home() {
 
   return (
     <>
+      {notes.length === 0 && <NoNotesFoundMessage />}
+
       <main className="main">
         {notes.map(n => (
           <div key={n._id}>

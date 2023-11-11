@@ -23,7 +23,7 @@ body {
 
 
 .main {
-  @apply flex flex-col items-center justify-between p-8 h-full;
+  @apply flex flex-col items-center justify-between p-8;
 }
 
 .header {
@@ -43,7 +43,7 @@ body {
 }
 
 .note-card {
-  @apply flex flex-col w-[85vw] px-5 bg-dark-purple rounded-xl drop-shadow-lg h-[50vh] overflow-hidden;
+  @apply flex mt-10 flex-col w-[85vw] px-5 bg-dark-purple rounded-xl drop-shadow-lg h-[50vh] overflow-hidden;
 }
 
 .note-card-title {

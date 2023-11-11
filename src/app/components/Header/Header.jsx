@@ -19,6 +19,9 @@ const Header = () => {
           <h1 className='logo'>
             <Link href="/">Agustin Grigaliunas</Link>
           </h1>
+          <h2 className='text-xs my-1'>
+            Hecho con ❤️ @2023
+          </h2>
         </div>
         <div className='header-right'>
           {/* <div className='header-create-note'>
