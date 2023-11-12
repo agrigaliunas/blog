@@ -1,7 +1,7 @@
 import WriteNoteCard from '@/app/components/Card/WriteNoteCard'
 import React from 'react'
 
-const page = () => {
+const Page = () => {
   return (
     <main className='main'>
         <WriteNoteCard />
@@ -9,4 +9,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

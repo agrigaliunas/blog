@@ -3,7 +3,7 @@ import Note from '@/app/components/Note/Note';
 import { useParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
-const page = () => {
+const Page = () => {
 
   const {id} = useParams();
   const [showedNote,  setShowedNote]  =  useState({title: "", labels: [], content: ""})
@@ -26,4 +26,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
