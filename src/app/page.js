@@ -17,7 +17,7 @@ export default async function Home() {
     <>
       {notes.length === 0 && <NoNotesFoundMessage />}
 
-      <main className="main">
+      <main className="main items-center">
         {notes.map(n => (
           <div key={n._id}>
             <NoteCard note={n} />

@@ -23,7 +23,7 @@ body {
 
 
 .main {
-  @apply flex flex-col items-center justify-between p-8;
+  @apply flex flex-col justify-between p-8;
 }
 
 .header {
@@ -44,6 +44,10 @@ body {
 
 .note-card {
   @apply flex mt-10 flex-col w-[85vw] px-5 bg-dark-purple rounded-xl drop-shadow-lg h-[50vh] overflow-hidden;
+}
+
+.write-note-card {
+  @apply flex w-full justify-center items-center bg-dark-purple rounded-xl drop-shadow-lg px-5;
 }
 
 .note-card-title {
@@ -68,6 +72,10 @@ body {
 
 .read-note-button {
   @apply bg-[#d64040] font-bold p-2 my-1 rounded-md;
+}
+
+.write-note-button {
+  @apply bg-[#d64040] font-bold py-2 px-10 my-1 rounded-md;
 }
 
 .header-right {

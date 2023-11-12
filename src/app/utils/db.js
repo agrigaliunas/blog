@@ -7,7 +7,7 @@ const conn = {
 export async function connectDB() {
     if (conn.isConnected) return;
 
-    const db = await connect('mongodb://localhost:27017/blog')
+    const db = await connect('mongodb://localhost:27017/myblog')
     conn.isConnected = db.connections[0].readyState;
 }
 
