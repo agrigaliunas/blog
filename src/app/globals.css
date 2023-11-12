@@ -23,7 +23,11 @@ body {
 
 
 .main {
-  @apply flex flex-col justify-between p-8;
+  @apply flex flex-col justify-between p-2;
+}
+
+.main-note {
+  @apply flex justify-center items-center ;
 }
 
 .header {
@@ -43,7 +47,11 @@ body {
 }
 
 .note-card {
-  @apply flex mt-10 flex-col w-[85vw] px-5 bg-dark-purple rounded-xl drop-shadow-lg h-[50vh] overflow-hidden;
+  @apply flex mt-5 flex-col w-[85vw] px-5 bg-dark-purple rounded-xl drop-shadow-lg h-[50vh] overflow-hidden;
+}
+
+.note {
+  @apply flex mt-10 flex-col w-[85vw] px-5 bg-dark-purple rounded-xl drop-shadow-lg;
 }
 
 .write-note-card {
@@ -55,7 +63,7 @@ body {
 }
 
 .note-card-content {
-  @apply text-white break-all;
+  @apply text-white text-left break-words;
 }
 
 .note-card-date {
@@ -88,4 +96,8 @@ body {
 
 .sub-header {
   @apply flex items-center justify-center flex-row py-5 w-full bg-purple-950;
+}
+
+.note-content {
+  @apply text-white break-words overflow-hidden;
 }

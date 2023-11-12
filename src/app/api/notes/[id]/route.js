@@ -1,19 +1,23 @@
+import Note from "@/app/models/Note";
+import { connectDB } from "@/app/utils/db";
 import { NextResponse } from "next/server";
 
-export function GET(request, {params}) {
-    return NextResponse.json({
-        message: `Obtained note ${params.id}`
-    })
-}
+export async function GET(request, {params}) {
+    connectDB()
+    try {
+        const note = await Note.findById(params.id)
 
-export function DELETE(request, {params}) {
-    return NextResponse.json({
-        message: `Deleted note ${params.id}`
-    })
-}
-
-export function UPDATE(request, {params}) {
-    return NextResponse.json({
-        message: `Updated note ${params.id}`
-    })
+        if (!note)
+            return NextResponse.json({
+        message: "Note not found"
+        }, {
+          status: 404,
+        });
+        return NextResponse.json(note)
+    } catch (err) {
+        return NextResponse.json(err.message, {
+            status: 400,
+          });
+      
+    }
 }

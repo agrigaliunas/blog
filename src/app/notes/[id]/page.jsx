@@ -1,8 +1,28 @@
-import React from 'react'
+'use client'
+import Note from '@/app/components/Note/Note';
+import { useParams } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
 
 const page = () => {
+
+  const {id} = useParams();
+  const [showedNote,  setShowedNote]  =  useState({title: "", labels: [], content: ""})
+
+  useEffect(() => {
+    async function fetchNote() {
+      const fechedNote  = await fetch(`/api/notes/${id}`)
+      const jsonNote  = await fechedNote.json()
+      console.log(jsonNote)
+      setShowedNote(jsonNote)
+    } 
+
+    fetchNote()
+  }, [])
+
   return (
-    <div>page</div>
+    <main className='main-note'>
+      <Note note={showedNote} />
+    </main>
   )
 }
 

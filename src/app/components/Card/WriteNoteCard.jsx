@@ -1,12 +1,17 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import CreateNotebutton from '../Button/CreateNotebutton'
 import NoteCardInputTitle from './NoteCardInputTitle'
 import Divider from '../Divider/Divider'
-import NoteCardInputContent from './NoteCardInputContent'
+import "quill/dist/quill.snow.css";
+import 'react-quill/dist/quill.snow.css';
 import { useRouter, useParams } from 'next/navigation'
+import ReactQuill, { Quill } from 'react-quill';
 
 const WriteNoteCard = () => {
+
+  const [noteTitle, setNoteTitle] = useState("")
+  const [noteContent, setNoteContent] = useState("")
+
   const [newNote, setNewNote] = useState({
     title: "",
     content: ""
@@ -63,9 +68,18 @@ const WriteNoteCard = () => {
     router.replace("/");
   };
 
-  const handleChange = (e) =>{ 
-    setNewNote({ ...newNote, [e.target.name]: e.target.value });
+  const handleTitleChange = (e) => {
+    setNoteTitle(e.target.value)
+    setNewNote({ ...newNote, "title": noteTitle });
+
   }
+
+  const handleContentChange = (value) => {
+    setNoteContent(value)
+    setNewNote({ ...newNote, "content": value });
+  }
+
+
   const validateNote = () => {
     let errors = {};
 
@@ -84,14 +98,14 @@ const WriteNoteCard = () => {
       <div className='write-note-card'>
           <div className='text-left w-full'>
               <div className='mt-5 mb-3'>
-                  <NoteCardInputTitle value={newNote.title} onInputTitle={handleChange}/>
+                  <NoteCardInputTitle value={newNote.title} onInputTitle={handleTitleChange}/>
               </div>
               <Divider />
               {/* <div className='my-3 note-labels overflow-x-scroll scrollbar-hide'>
                 
               </div> */}
               <div className='my-3'>
-                <NoteCardInputContent value={newNote.content} onInputContent={handleChange}/>
+                <ReactQuill className="text-white" theme="snow" value={newNote.content} onChange={handleContentChange} />
               </div>
           </div>
       </div>
