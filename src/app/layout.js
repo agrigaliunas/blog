@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata = {
   title: 'Agustin Grigaliunas',
-  description: 'Bienvenido a mi blog.',
+  description: 'Bienvenido al blog de Agustin Grigaliunas. Sigueme en mis redes sociales :).',
 }
 
 export default function RootLayout({ children }) {
