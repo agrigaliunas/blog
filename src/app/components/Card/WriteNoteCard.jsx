@@ -1,13 +1,15 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
+import dynamic from "next/dynamic";
 import NoteCardInputTitle from './NoteCardInputTitle'
 import Divider from '../Divider/Divider'
 import "quill/dist/quill.snow.css";
 import 'react-quill/dist/quill.snow.css';
 import { useRouter, useParams } from 'next/navigation'
-import ReactQuill, { Quill } from 'react-quill';
 
 const WriteNoteCard = () => {
+
+  const ReactQuill = useMemo(() => dynamic(() => import('react-quill'), { ssr: false }),[]);
 
   const [noteTitle, setNoteTitle] = useState("")
   const [noteContent, setNoteContent] = useState("")
