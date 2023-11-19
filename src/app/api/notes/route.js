@@ -4,7 +4,7 @@ import Note from "@/app/models/Note";
 
 export async function GET() {
     connectDB()
-    const notes = await Note.find()
+    const notes = await Note.find().sort({updatedAt: "desc"})
     return NextResponse.json(notes)
 }
 
