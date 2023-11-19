@@ -8,32 +8,31 @@ import LoadingNotesMessage from '../Message/LoadingNotesMessage';
 const NotesSection = () => {
     const [fetchingNotes, setFetchingNotes] = useState(false);
     const [notes, setShowedNotes]  = useState([])
-  
+    const [noNotesFetched, setNoNotesFetched] = useState(false)
+
     useEffect(() => {
-      setFetchingNotes(true)
       async function fetchNotes() {
-        const fechedNote  = await fetch(`/api/notes`)
-        const jsonNote  = await fechedNote.json()
-        setShowedNotes(jsonNote)
-  
-        if (jsonNote) {
-          setFetchingNotes(false)
+        setFetchingNotes(true)
+        const fetchedNotes  = await fetch(`/api/notes`)
+        const jsonNotes = await fetchedNotes.json()
+        if (!fetchedNotes) {
+          setNoNotesFetched(true)
         }
+        setShowedNotes(jsonNotes)
+        setFetchingNotes(false)
       } 
   
       fetchNotes()
     }, [])
 
-
   return (
     <>
-    {notes.length === 0 && <NoNotesFoundMessage />}
-    {fetchingNotes && <LoadingNotesMessage />}
-        {notes.map(n => (
+      {!fetchingNotes ? notes.map(n => (
         <div key={n._id}>
-        <NoteCard note={n} />
+          <NoteCard note={n} />
         </div>
-    ))}
+      )) : <LoadingNotesMessage />}
+      {noNotesFetched && <NoNotesFoundMessage />}
     </>
   )
 }

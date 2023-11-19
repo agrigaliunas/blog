@@ -13,8 +13,8 @@ const Page = () => {
   useEffect(() => {
     setFetchingNotes(true)
     async function fetchNote() {
-      const fechedNote  = await fetch(`/api/notes/${id}`)
-      const jsonNote  = await fechedNote.json()
+      const fetchedNote  = await fetch(`/api/notes/${id}`)
+      const jsonNote  = await fetchedNote.json()
       setShowedNote(jsonNote)
 
       if (jsonNote) {
