@@ -9,7 +9,7 @@ import Link from 'next/link';
 function SocialMediaButton({socialMedia, link}) {
   return (
     <Link href={`https://www.${socialMedia}.com/${link}`}>
-      <button className='flex flex-row justify-center items-center mx-3 text-white'>
+      <button className='flex flex-row justify-center items-center mx-1 text-white'>
           {socialMedia === "Linkedin" && <LinkedInIcon />}
           {socialMedia === "Twitter" && <TwitterIcon />}
           {socialMedia === "Instagram" && <InstagramIcon />}

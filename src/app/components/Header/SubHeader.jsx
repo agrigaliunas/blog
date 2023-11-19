@@ -8,7 +8,6 @@ const SubHeader = () => {
        <SocialMediaButton socialMedia="Instagram" link="agustingriga"/>
        <SocialMediaButton socialMedia="Linkedin" link="in/agustingrigaliunas"/>
        <SocialMediaButton socialMedia="Youtube" link="channel/UCEd7nl-FRlvEu_eXfvZFmPw"/>
-
     </div>  )
 }
 
