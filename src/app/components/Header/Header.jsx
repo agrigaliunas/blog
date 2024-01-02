@@ -20,7 +20,7 @@ const Header = () => {
             <Link href="/">Agustin Grigaliunas</Link>
           </h1>
           <h2 className='text-xs my-1'>
-            Hecho con ❤️ @2023
+            Hecho con ❤️ @2024
           </h2>
         </div>
         <div className='header-right'>
